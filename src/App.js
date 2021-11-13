@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+//Containers and Components
+import { BookIndex, BookShow } from './components'
+
+//Styles
+import Header from './components/Header';
+import { GlobalStyle } from './GlobalStyle';
+ 
+import {Switch, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header/>
+      <h1>Start here</h1>
+      <Switch>
+        <Route path="/books/:id"><BookShow/></Route>
+        <Route path="/books"><BookIndex/></Route>
+      </Switch>
+      <GlobalStyle />
     </div>
   );
 }
