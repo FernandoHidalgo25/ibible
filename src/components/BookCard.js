@@ -1,8 +1,10 @@
-export default function BookCard({name, imageUrl, testament}){
+import { Link } from 'react-router-dom'
+
+export default function BookCard({id, name, imageUrl, testament, group}){
     
     return <div className="card">
-        <h3>{name}</h3>
-        <img src={imageUrl} alt={name}/>
-        <p>{testament}</p>
+        <Link to={`/books/${id}`}><h3>{name}</h3></Link>
+        <Link to={`/books/${id}`}><img src={imageUrl} alt={name}/></Link>
+        <p>{testament} , {group}</p>
     </div>
 }

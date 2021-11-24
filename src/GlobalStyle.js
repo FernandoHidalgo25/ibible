@@ -16,11 +16,13 @@ export const GlobalStyle = createGlobalStyle`
  *{
      box-sizing: border-box;
      font-family: 'Abel', sans-serif;
+     align-items: center;
  }
 
  body {
      margin: 0;
      padding: 0;
+     text-align: center;
 
      h1 {
          font-size: 2rem;
@@ -93,6 +95,13 @@ export const GlobalStyle = createGlobalStyle`
         object-fit: cover;
       }
       
+      .show {
+
+      }
+
+      .show h1{
+
+      }
       
       textarea {
         width: 80%;
@@ -133,7 +142,7 @@ export const GlobalStyle = createGlobalStyle`
         color: black;
       }
       
-      /* stolen from w3 schools: https://www.w3schools.com/howto/howto_css_loader.asp */
+      /* taken from w3 schools: https://www.w3schools.com/howto/howto_css_loader.asp */
       .loader {
         border: 100px solid #f3f3f3; /* Light grey */
         border-top: 100px solid #3498db; /* Blue */

@@ -13,11 +13,12 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(reducer, composeEnhancers(
   applyMiddleware(thunk)
   ));
-//console.log("Hello")
-//fetch("http://localhost:3000/books").then(res=> res.json()).then(console.log)
+
 ReactDOM.render(
   <React.StrictMode>
     <Router><Provider store={store}><App /></Provider></Router>
   </React.StrictMode>,
   document.getElementById('root')
 );
+
+reportWebVitals();
