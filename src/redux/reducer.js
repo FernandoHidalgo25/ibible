@@ -24,6 +24,8 @@ export function reducer(state=initialState, action){
             return {...state, selectedBook: action.payload};
         case "CLEAR_BOOK":
             return {...state, selectedBook: initialBook};
+        case "SET_USER":
+            return {...state, user: action.payload};
         default:
             return {...state}
     }

@@ -8,6 +8,8 @@ import { GlobalStyle } from './GlobalStyle';
  
 import {Switch, Route } from 'react-router-dom';
 import { connect } from 'react-redux'
+//import { useEffect } from 'react'
+//import { autoLogin } from './redux/actionCreators'
 
 function App(props) {
   console.log(props)
