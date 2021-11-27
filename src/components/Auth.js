@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { submitSignup, submitLogin } from '../redux/actionCreators'
+import { submitSignup } from '../redux/actionCreators'
 import { connect } from "react-redux"
 
 function Auth(props){
@@ -9,15 +9,15 @@ function Auth(props){
     const [password, setPassword] = useState("")
 
 const toggleSignup = () => setSignup(!signup)
+console.log(props)
 
-const handleSubmit = (e) => {
-    e.preventDefault()
-    signup ? props.submitSignup({username, password}) : props.submitLogin({username, password})
-}
+//const handleSubmit = (e) => {
+    //e.preventDefault()
+    //signup ? props.submitSignup({username, password}) : props.submitLogin({username, password})
+//}
 
 return<>
 {signup ? <h1>Sign Up!</h1> : <h1>Login!</h1>}
-<form onSubmit={handleSubmit}>
   <label>
     Username:
     <input type="text" name="username" value={username} onChange={(e) => setUsername(e.target.value)} />
@@ -27,9 +27,9 @@ return<>
     <input type="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} />
   </label>
   <input type="submit" value="Submit" />
-</form>
+
 <button onClick={toggleSignup}>Or... {signup ? "Login!" : "Signup!"}</button>
 </>
 }
 
-export default connect(null, {submitSignup, submitLogin})(Auth);
+export default connect(null, {submitSignup})(Auth);
